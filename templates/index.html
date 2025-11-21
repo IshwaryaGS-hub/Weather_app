@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #6EC1E4, #4973C2, #192f6a);
+            background-size: 300% 300%;
+            animation: gradientMove 10s infinite ease-in-out;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .glass-card {
+            backdrop-filter: blur(16px);
+            background: rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .search-btn:hover {
+            transform: scale(1.03);
+            transition: 0.2s ease;
+        }
+    </style>
+
+    <script src="/static/loading.js"></script>
+</head>
+
+<body class="h-screen flex items-center justify-center px-4">
+
+    <div class="glass-card p-8 rounded-3xl shadow-2xl w-full max-w-md text-white">
+        <h1 class="text-4xl font-extrabold text-center mb-6 drop-shadow-lg">
+            Weather App
+        </h1>
+
+        <form action="/weather" method="GET" onsubmit="showLoading()">
+            <input name="city" type="text" placeholder="Enter city name..."
+                class="w-full p-3 rounded-lg mb-4 text-gray-800 shadow-md focus:ring-2 focus:ring-blue-300"
+                required>
+
+            <button
+                class="search-btn w-full py-3 rounded-lg bg-gradient-to-r from-blue-500 to-blue-700 text-white font-semibold shadow-lg">
+                Search
+            </button>
+        </form>
+
+        <p id="loading" class="hidden text-center mt-4 font-semibold text-blue-100">
+            Loading weather...
+        </p>
+    </div>
+
+</body>
+</html>

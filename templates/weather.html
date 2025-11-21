@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Result</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #4973C2, #6EC1E4, #a1c4fd);
+            background-size: 300% 300%;
+            animation: gradientShift 10s infinite ease-in-out;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: left; }
+            50% { background-position: right; }
+            100% { background-position: left; }
+        }
+
+        .glass-box {
+            backdrop-filter: blur(18px);
+            background: rgba(255, 255, 255, 0.22);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+        }
+
+        .weather-card:hover {
+            transform: translateY(-4px);
+            transition: 0.3s ease;
+        }
+    </style>
+</head>
+
+<body class="h-screen flex items-center justify-center px-4">
+
+    <div class="glass-box weather-card p-8 shadow-2xl w-full max-w-md text-white">
+
+        {% if error %}
+            <p class="text-red-300 text-center text-lg font-semibold">{{ error }}</p>
+            <a href="/" class="mt-4 block text-blue-100 text-center underline">Try Again</a>
+        {% else %}
+
+        <h2 class="text-3xl font-bold mb-4 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-200 to-white">
+            {{ data.city }} Weather
+        </h2>
+
+        <div class="text-center mb-4">
+            <img src="https://openweathermap.org/img/wn/{{ data.icon }}@2x.png"
+                 class="mx-auto w-28 drop-shadow-lg">
+            <p class="text-xl font-semibold capitalize">{{ data.description }}</p>
+        </div>
+
+        <div class="mt-4 space-y-3 text-lg">
+            <p>🌡 Temperature: <strong>{{ data.temperature }} °C</strong></p>
+            <p>💧 Humidity: <strong>{{ data.humidity }} %</strong></p>
+            <p>🌬 Wind: <strong>{{ data.wind }} m/s</strong></p>
+        </div>
+
+        <a href="/" 
+           class="mt-6 block text-center bg-white text-blue-700 font-bold py-2 rounded-lg shadow-md hover:bg-blue-100">
+            Search Again
+        </a>
+
+        {% endif %}
+    </div>
+
+</body>
+</html>
