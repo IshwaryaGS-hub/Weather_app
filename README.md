@@ -19,15 +19,20 @@ This app allows users to search for real-time weather data by entering any city 
 
 
 #  Tech Stack
-  Frontend
+  Frontend -
   HTML5
+  
   TailwindCSS
+  
   Custom CSS Effects
+  
   Backend- Python Flask
+  
   API - OpenWeatherMap API
 
-Deployment - Render 
+ Deployment - Render 
 
+---------
 
 ## Setup & Installation
 1️⃣ Clone the repository
@@ -86,7 +91,7 @@ In Flask:
 import os
 api_key = os.getenv("API_KEY")
 
-
+-------
 
 ## Note 
 If you like this project, please ⭐ star the repo on GitHub — it helps a lot!
