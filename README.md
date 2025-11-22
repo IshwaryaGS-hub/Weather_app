@@ -95,4 +95,5 @@ api_key = os.getenv("API_KEY")
 
 ## Note 
 If you like this project, please ⭐ star the repo on GitHub — it helps a lot!
+
 Developed by __galwhocodes__ | Ishwarya | FullStack Developer
