@@ -23,33 +23,13 @@ This app allows users to search for real-time weather data by entering any city 
   HTML5
   TailwindCSS
   Custom CSS Effects
-  Backend
+  Backend- Python Flask
+  API - OpenWeatherMap API
 
-Python
+Deployment - Render 
 
-Flask
 
-API
-
-OpenWeatherMap API
-
-Deployment
-
-Render (Free Tier)
-
-📁 Project Structure
-weather-app/
-│── app.py
-│── requirements.txt
-│── render.yaml
-│── static/
-│   └── loading.js
-│── templates/
-│   ├── index.html
-│   └── weather.html
-└── README.md
-
-⚙️ Setup & Installation
+## Setup & Installation
 1️⃣ Clone the repository
 git clone <your-repo-link>
 cd weather-app
@@ -92,10 +72,9 @@ services:
     startCommand: "gunicorn app:app"
     plan: free
 
-
 You can deploy your own fork by connecting the GitHub repo to Render.
 
-🔑 Environment Variables
+##  Environment Variables
 
 Create a .env file (if using API key locally):
 
@@ -107,11 +86,8 @@ In Flask:
 import os
 api_key = os.getenv("API_KEY")
 
-🤝 Contributing
 
-Pull requests are welcome!
-If you'd like to improve the UI, add animations, or expand features, feel free to contribute.
 
-⭐ Show Your Support
-
+## Note 
 If you like this project, please ⭐ star the repo on GitHub — it helps a lot!
+Developed by __galwhocodes__ | Ishwarya | FullStack Developer
